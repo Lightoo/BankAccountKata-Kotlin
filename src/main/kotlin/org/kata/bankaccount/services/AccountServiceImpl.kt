@@ -16,7 +16,12 @@ class AccountServiceImpl : AccountService {
         )
     }
 
-    override fun withdraw(account: Account, amount: Double): Boolean {
-        TODO("Not yet implemented")
+    override fun withdraw(account: Account, amount: Double) {
+        if (amount <= 0 || amount > account.balance) throw Exception("insufficient balance")
+        val newBalance = account.balance - amount
+        account.balance = newBalance
+        account.transactions.add(
+            Transaction(OperationType.WITHDRAW, Date(), amount, newBalance)
+        )
     }
 }
