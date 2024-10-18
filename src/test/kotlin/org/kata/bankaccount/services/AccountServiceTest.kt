@@ -10,13 +10,13 @@ class AccountServiceTest {
 
     @BeforeEach
     fun setUp() {
-        accountService = TODO()
+        accountService = AccountServiceImpl();
     }
     @Test
     @Throws(Exception::class)
     fun deposit_with_positive_amount() {
-        val account = Account(0.0, emptyList())
+        val account = Account()
         accountService.deposit(account, 200.0)
-        assertEquals(200, account.balance)
+        assertEquals(200.0, account.balance)
     }
 }
