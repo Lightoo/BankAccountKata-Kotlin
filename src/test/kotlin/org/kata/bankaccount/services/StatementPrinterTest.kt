@@ -14,7 +14,7 @@ class StatementPrinterTest {
     @BeforeEach
     fun setUp() {
         accountService = AccountServiceImpl()
-        statementPrinter = TODO()
+        statementPrinter = StatementPrinterImpl()
     }
 
     @Test
